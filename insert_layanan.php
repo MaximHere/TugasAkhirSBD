@@ -3,7 +3,7 @@ require 'fungsi.php';
 if(isset($_POST["submit"])){
 
 
-    if(tambah_pelanggan($_POST)>0){
+    if(tambah_layanan($_POST)>0){
         echo "Data Berhasil DiInputkan";
     } else {
         echo "Data Gagal DiInputkan";
@@ -24,21 +24,21 @@ if(isset($_POST["submit"])){
 
 <body>
 <h1>Chris Laundry</h1>
-<h2>Tambah Data Pelanggan</h2>
+<h2>Tambah Layanan</h2>
 
 <form action="" method="post">
     <ul>
         <li>
-            <label for="NamaPelanggan">Nama Pelanggan: </label>
-            <input type="text" name="NamaPelanggan" id="NamaPelanggan">
+            <label for="KodeLayanan">Kode Layanan: </label>
+            <input type="text" name="KodeLayanan" id="KodeLayanan">
         </li>
         <li>
-            <label for="AlamatPelanggan">Alamat Pelanggan: </label>
-            <input type="text" name="AlamatPelanggan" id="AlamatPelanggan">
+            <label for="JenisLayanan">Nama Layanan: </label>
+            <input type="text" name="JenisLayanan" id="JenisLayanan">
         </li>
         <li>
-            <label for="NoTelp">Nomor Telepon: </label>
-            <input type="text" name="NoTelp" id="NoTelp">
+            <label for="HargaLayanan">Harga Layanan: </label>
+            <input type="text" name="HargaLayanan" id="HargaLayanan">
         </li>
         <li>
             <button type="submit" name="submit">Tambah Data</button>

@@ -31,9 +31,10 @@ $pelanggan = query("SELECT * FROM pelanggan")
         <td><?= $baris["AlamatPelanggan"]; ?></td>
         <td><?= $baris["NoTelp"] ?></td>
         <td>
-           <a href='view_pelanggan.php'>Update</a>
+           <a href='update_pelanggan.php?PelangganID=<?= $baris["PelangganID"]; ?>"'><button>Update</button></a>
             | 
-           <a href='delete_pelanggan.php?id=<?= $baris["PelangganID"]; ?>'>Delete </a>
+           <a href='delete_pelanggan.php?id=<?= $baris["PelangganID"]; ?>'onclick="return confirm('Apakah anda yakin ingin menghapus data ini?');">
+           <button>Delete</button></a>
         </td>
     </tr> 
     <?php $i++; ?>

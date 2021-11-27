@@ -1,6 +1,6 @@
 <?php
 require 'fungsi.php';
-$invoice = query("SELECT * FROM invoice")
+$orders = query("SELECT * FROM orders")
     // var_dump($pelanggan)
 ?>
 
@@ -17,21 +17,22 @@ $invoice = query("SELECT * FROM invoice")
     <tr>
         <th>No</th>
         <th>Kode Nota</th>
-        <th>Tanggal Nota</th>
-        <th>ID Pelanggan</th>
+        <th>Kode Layanan</th>
+        <th>Qty</th>
         <th>Aksi</th>
     </tr>
     <?php $i = 1 ?>
-    <?php foreach($invoice as $baris): ?>
+    <?php foreach($orders as $baris): ?>
     <tr>
         <td><?= $i; ?></td>
         <td><?= $baris["KodeNota"]; ?></td>
-        <td><?= $baris["TanggalNota"]; ?></td>
-        <td><?= $baris["PelangganID"]; ?></td>
+        <td><?= $baris["KodeLayanan"]; ?></td>
+        <td><?= $baris["Qty"]; ?></td>
         <td>
-           <a id= 'a1' href='view_pelanggan.php'>Update</a>
+           <a id= 'a1' href='view_pelanggan.php?id=<?=catch_orders($baris["KodeNota"],$baris["KodeLayanan"])?>'>Update</a>
            
-           <a id= 'a1' href='view_layanan.php'>Delete </a>
+           <a href='delete_layanan.php?id=<?= $baris["KodeLayanan"]; ?>'onclick="return confirm('Apakah anda yakin ingin menghapus data ini?');">
+           <button>Delete</button></a>
         </td>
     </tr> 
     <?php $i++; ?>

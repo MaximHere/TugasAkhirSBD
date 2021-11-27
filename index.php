@@ -17,11 +17,15 @@ require 'fungsi.php';
 
 <ul>
     <li>
-        <button onclick="window.location.href='insert_invoice.php'">Insert Invoice</button>
-    </li> 
-    <li>
         <button onclick="window.location.href='insert_pelanggan.php'">Insert Pelanggan</button>
     </li>
+    <li>
+        <button onclick="window.location.href='insert_layanan.php'">Insert Layanan</button>
+    </li>
+    <li>
+        <button onclick="window.location.href='insert_invoice.php'">Insert Invoice</button>
+    </li>  
+
 </ul>
 
 <ul>
@@ -35,8 +39,12 @@ require 'fungsi.php';
         <button onclick="window.location.href='view_layanan.php'">View Layanan</button>
     </li>
     <li>
-        <button onclick="window.location.href='view_invoice.php'">View invoice</button>
+        <button onclick="window.location.href='view_invoice.php'">View Invoice</button>
     </li>
+    <li>
+        <button onclick="window.location.href='view_orders.php'">View Orders</button>
+    </li>
+
 
 </ul>
 </p>

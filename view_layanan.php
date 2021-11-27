@@ -7,7 +7,7 @@ $layanan = query("SELECT * FROM layanan")
 <!DOCTYPE html>
 <html>
 <head>
-    <title>View Invoice</title>
+    <title>View Layanan</title>
 </head>  
 
 
@@ -19,6 +19,7 @@ $layanan = query("SELECT * FROM layanan")
         <th>Kode Layanan</th>
         <th>Nama Layanan</th>
         <th>Harga Layanan</th>
+        <th>Aksi</th>
     </tr>
     <?php $i = 1 ?>
     <?php foreach($layanan as $baris): ?>
@@ -27,6 +28,12 @@ $layanan = query("SELECT * FROM layanan")
         <td><?= $baris["KodeLayanan"]; ?></td>
         <td><?= $baris["JenisLayanan"]; ?></td>
         <td><?= $baris["HargaLayanan"]; ?></td>
+        <td>
+           <a href='update_layanan.php?id=<?= $baris["KodeLayanan"]; ?>'><button>Update</button></a>
+            | 
+           <a href='delete_layanan.php?id=<?= $baris["KodeLayanan"]; ?>'onclick="return confirm('Apakah anda yakin ingin menghapus data ini?');">
+           <button>Delete</button></a>
+        </td>
     </tr> 
     <?php $i++; ?>
     <?php endforeach; ?>
