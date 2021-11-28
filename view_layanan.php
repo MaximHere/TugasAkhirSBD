@@ -26,7 +26,7 @@ $layanan = query("SELECT * FROM layanan")
     <tr>
         <td><?= $i; ?></td>
         <td><?= $baris["KodeLayanan"]; ?></td>
-        <td><?= $baris["JenisLayanan"]; ?></td>
+        <td><?= $baris["KodeLayanan"]; ?></td>
         <td><?= $baris["HargaLayanan"]; ?></td>
         <td>
            <a href='update_layanan.php?id=<?= $baris["KodeLayanan"]; ?>'><button>Update</button></a>

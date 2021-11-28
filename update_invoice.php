@@ -4,7 +4,7 @@ require 'fungsi.php';
 
 $id = $_GET["id"];
 // var_dump($id);
-$updt = query("SELECT * FROM invoice WHERE KodeNota = '" . mysqli_escape_string($konek,$id) . "' ")[0];
+$updt = query("SELECT * FROM invoice NATURAL JOIN pelanggan WHERE KodeNota = '" . mysqli_escape_string($konek,$id) . "' ")[0];
 
 if( isset($_POST["submit"])){
     if (update_invoice($_POST) > 0) {
@@ -53,7 +53,7 @@ elseif( isset($_GET["back"])){
             </li>
             <li>
                 <label for="TanggalNota">Tanggal : </label>
-                <input type="date" name="TanggalNota" id="TanggalNota"required value="<?= $updt["TanggalNota"]; ?>">
+                <input type="date" name="TanggalNota" id="TanggalNota"required value="<?= $updt["TanggalNota"]; ?>" required>
             </li>
             <li>
                 <table>
@@ -61,10 +61,10 @@ elseif( isset($_GET["back"])){
             <?php 
             $data = mysqli_query($konek, "SELECT * FROM pelanggan");
             ?>
-            <select name="PelangganID">
+            <select name="PelangganID" required>
             
             <?php
-            $current = $updt["PelangganID"];
+            $current = $updt["PelangganID"]." - ".$updt["NamaPelanggan"] ;
             echo"<option value ='$current' >$current</option>";
             while ($baris =  mysqli_fetch_assoc($data)){
                 $Nota = $baris["PelangganID"]." - ".$baris["NamaPelanggan"];

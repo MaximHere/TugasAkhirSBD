@@ -26,11 +26,11 @@ if(isset($_POST["submit"])){
 
 <form action="" method="post">
      <table>
-            <tr>
+        <tr>
              <td><li><label for="TanggalNota">Tanggal</label></li></td>
              <td>:</td>
              <td>
-                <input type="date" name="TanggalNota" id="TanggalNota">
+                <input type="date" name="TanggalNota" id="TanggalNota" required>
             </td>
          </tr>
          <tr>
@@ -40,7 +40,7 @@ if(isset($_POST["submit"])){
              <?php 
             $data = mysqli_query($konek, "SELECT * FROM pelanggan");
             ?>
-            <select name="PelangganID">
+            <select name="PelangganID" required>
             
             <?php
             echo"<option value ='' >Pilih Pelanggan</option>";

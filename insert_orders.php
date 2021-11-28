@@ -35,13 +35,14 @@ if(isset($_POST["submit"])){
              <?php 
             $data = mysqli_query($konek, "SELECT * FROM invoice NATURAL JOIN pelanggan");
             ?>
-            <select name="KodeNota">
+            <select name="KodeNota" required>
             
             <?php
             echo"<option value ='' >Pilih KodeNota</option>";
             while ($baris =  mysqli_fetch_assoc($data)){
-                $Nota = $baris["KodeNota"]." - ".$baris["NamaPelanggan"];
-                echo"<option value ='$Nota'>$Nota</option>";
+                $Nota = $baris["KodeNota"];
+                $teks = " - ".$baris["NamaPelanggan"];
+                echo"<option value ='$Nota'>$Nota$teks</option>";
             } 
             ?> 
              </td>
@@ -53,7 +54,7 @@ if(isset($_POST["submit"])){
              <?php 
             $data = mysqli_query($konek, "SELECT * FROM layanan");
             ?>
-            <select name="KodeLayanan">
+            <select name="KodeLayanan" required>
             
             <?php
             echo"<option value ='' >Pilih Layanan</option>";
@@ -65,10 +66,10 @@ if(isset($_POST["submit"])){
              </td>
          </tr>
          <tr>
-             <td><li><label for="KodeLayanan">Qty</label></li></td>
+             <td><li><label for="Qty">Qty</label></li></td>
              <td>:</td>
              <td>
-                <input type="text" name="KodeLayanan" id="KodeLayanan">
+                <input type="text" name="Qty" id="Qty" required>
             </td>
          </tr>
          <tr>

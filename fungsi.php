@@ -44,11 +44,11 @@ function tambah_layanan($data){
 function tambah_orders($data){
     global $konek;
 
-    $pelanggan = $_POST["PelangganID"];
+    $nota = $_POST["KodeNota"];
     $layanan = $_POST["KodeLayanan"];
     $qty = $_POST["Qty"];
 
-    $querry_insert = "INSERT INTO orders VALUES ('$pelanggan', '$layanan','$qty')";
+    $querry_insert = "INSERT INTO orders VALUES ('$nota', '$layanan','$qty')";
     mysqli_query($konek, $querry_insert);
     return mysqli_affected_rows($konek);
 }
@@ -75,6 +75,12 @@ function delete_pelanggan($id) {
 function delete_layanan($kode) {
     global $konek;
     mysqli_query($konek, "DELETE FROM layanan WHERE KodeLayanan = '".$kode."' ");
+    return mysqli_affected_rows($konek);
+}
+
+function delete_invoice($kode) {
+    global $konek;
+    mysqli_query($konek, "DELETE FROM invoice WHERE KodeNota = '".$kode."' ");
     return mysqli_affected_rows($konek);
 }
 

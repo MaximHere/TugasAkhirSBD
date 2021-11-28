@@ -1,9 +1,12 @@
 <?php
 require 'fungsi.php';
 
-$data = $_GET["id"];
+$id = $_GET["id"];
+$data = explode("_",$id);
+$nota = $data[0];
+$layanan = $data[1];
 
-if( delete_orders($data[0],$data[1]) > 0) {
+if( delete_orders($nota,$layanan) > 0) {
     echo "
         <script>
             alert('data berhasil dihapus');

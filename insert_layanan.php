@@ -30,15 +30,15 @@ if(isset($_POST["submit"])){
     <ul>
         <li>
             <label for="KodeLayanan">Kode Layanan: </label>
-            <input type="text" name="KodeLayanan" id="KodeLayanan">
+            <input type="text" name="KodeLayanan" id="KodeLayanan"required>
         </li>
         <li>
             <label for="JenisLayanan">Nama Layanan: </label>
-            <input type="text" name="JenisLayanan" id="JenisLayanan">
+            <input type="text" name="JenisLayanan" id="JenisLayanan"required>
         </li>
         <li>
             <label for="HargaLayanan">Harga Layanan: </label>
-            <input type="text" name="HargaLayanan" id="HargaLayanan">
+            <input type="text" name="HargaLayanan" id="HargaLayanan"required>
         </li>
         
         <button type="submit" name="submit">Tambah Data</button>

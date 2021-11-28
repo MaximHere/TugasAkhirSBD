@@ -33,6 +33,8 @@ $invoice = query("SELECT * FROM invoice")
             | 
            <a href='delete_invoice.php?id=<?= $baris["KodeNota"]; ?>'onclick="return confirm('Apakah anda yakin ingin menghapus data ini?');">
            <button>Delete</button></a>
+           |
+           <a href='print.php?id=<?= $baris["KodeNota"]; ?>'><button>Cetak</button></a>
         </td>
     </tr> 
     <?php $i++; ?>

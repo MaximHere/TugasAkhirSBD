@@ -30,15 +30,15 @@ if(isset($_POST["submit"])){
     <ul>
         <li>
             <label for="NamaPelanggan">Nama Pelanggan: </label>
-            <input type="text" name="NamaPelanggan" id="NamaPelanggan">
+            <input type="text" name="NamaPelanggan" id="NamaPelanggan" required>
         </li>
         <li>
             <label for="AlamatPelanggan">Alamat Pelanggan: </label>
-            <input type="text" name="AlamatPelanggan" id="AlamatPelanggan">
+            <input type="text" name="AlamatPelanggan" id="AlamatPelanggan" required>
         </li>
         <li>
             <label for="NoTelp">Nomor Telepon: </label>
-            <input type="text" name="NoTelp" id="NoTelp">
+            <input type="text" name="NoTelp" id="NoTelp" required>
         </li>
         <li>
             <button type="submit" name="submit">Tambah Data</button>
