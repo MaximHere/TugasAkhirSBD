@@ -24,6 +24,9 @@ require 'fungsi.php';
     </li>
     <li>
         <button onclick="window.location.href='insert_invoice.php'">Insert Invoice</button>
+    </li> 
+    <li>
+        <button onclick="window.location.href='insert_orders.php'">Insert Orders</button>
     </li>  
 
 </ul>
@@ -44,6 +47,7 @@ require 'fungsi.php';
     <li>
         <button onclick="window.location.href='view_orders.php'">View Orders</button>
     </li>
+    
 
 
 </ul>

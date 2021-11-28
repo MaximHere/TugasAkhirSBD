@@ -7,12 +7,12 @@ $orders = query("SELECT * FROM orders")
 <!DOCTYPE html>
 <html>
 <head>
-    <title>View Invoice</title>
+    <title>View Order</title>
 </head>  
 
 
 <body>
-<h1>Data Invoice</h1>
+<h1>Data Order</h1>
 <table border="1" cellpadding="10" cellspacing="0">
     <tr>
         <th>No</th>
@@ -29,9 +29,9 @@ $orders = query("SELECT * FROM orders")
         <td><?= $baris["KodeLayanan"]; ?></td>
         <td><?= $baris["Qty"]; ?></td>
         <td>
-           <a id= 'a1' href='view_pelanggan.php?id=<?=catch_orders($baris["KodeNota"],$baris["KodeLayanan"])?>'>Update</a>
+           <a href='update_orders.php?id=<?=$baris["KodeNota"];?>_<?=$baris["KodeLayanan"];?>'><button>Update</button></a>
            
-           <a href='delete_layanan.php?id=<?= $baris["KodeLayanan"]; ?>'onclick="return confirm('Apakah anda yakin ingin menghapus data ini?');">
+           <a href='delete_orders.php?id=<?=$baris["KodeNota"];?>_<?=$baris["KodeLayanan"];?>'onclick="return confirm('Apakah anda yakin ingin menghapus data ini?');">
            <button>Delete</button></a>
         </td>
     </tr> 

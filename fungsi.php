@@ -11,6 +11,12 @@ function query($command){
     return $wadah;
 }
 
+function catch_orders($one, $two){
+    $wadah = [];
+    $wadah[] = $one;
+    $wadah[] = $two;
+}
+
 function tambah_pelanggan($data){
     global $konek;
 
@@ -35,6 +41,19 @@ function tambah_layanan($data){
     return mysqli_affected_rows($konek);
 }
 
+function tambah_orders($data){
+    global $konek;
+
+    $pelanggan = $_POST["PelangganID"];
+    $layanan = $_POST["KodeLayanan"];
+    $qty = $_POST["Qty"];
+
+    $querry_insert = "INSERT INTO orders VALUES ('$pelanggan', '$layanan','$qty')";
+    mysqli_query($konek, $querry_insert);
+    return mysqli_affected_rows($konek);
+}
+
+
 
 function delete_pelanggan($id) {
     global $konek;
@@ -48,6 +67,11 @@ function delete_layanan($kode) {
     return mysqli_affected_rows($konek);
 }
 
+function delete_orders($one, $two) {
+    global $konek;
+    mysqli_query($konek, "DELETE FROM orders WHERE KodeNota = '".$one."' AND  KodeLayanan = '".$two."' ");
+    return mysqli_affected_rows($konek);
+}
 
 function update_pelanggan($data) {
     global $konek;
@@ -79,6 +103,20 @@ function update_layanan($data) {
                 JenisLayanan = '$jenis',
                 HargaLayanan = '$harga'
                 WHERE KodeLayanan = '$target'";
+
+    mysqli_query($konek, $query);
+    return mysqli_affected_rows($konek);
+}
+
+function update_orders($data) {
+    global $konek;
+    $qty = htmlspecialchars($data["Qty"]);
+    $nota = $data["target_nota"];
+    $layanan = $data["target_layanan"];
+
+    $query = "UPDATE orders SET
+                Qty = '$qty'
+                WHERE KodeLayanan = '$layanan' AND KodeNota = '$nota'";
 
     mysqli_query($konek, $query);
     return mysqli_affected_rows($konek);

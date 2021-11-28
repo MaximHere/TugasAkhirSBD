@@ -40,9 +40,9 @@ if(isset($_POST["submit"])){
             <label for="HargaLayanan">Harga Layanan: </label>
             <input type="text" name="HargaLayanan" id="HargaLayanan">
         </li>
-        <li>
-            <button type="submit" name="submit">Tambah Data</button>
-        </li>
+        
+        <button type="submit" name="submit">Tambah Data</button>
+        
     </ul>
 </form>
 
