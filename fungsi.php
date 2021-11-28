@@ -53,6 +53,17 @@ function tambah_orders($data){
     return mysqli_affected_rows($konek);
 }
 
+function tambah_invoice($data){
+    global $konek;
+
+    $tanggal = $_POST["TanggalNota"];
+    $pelanggan = $_POST["PelangganID"];
+
+    $querry_insert = "INSERT INTO invoice VALUES ('', '$tanggal','$pelanggan')";
+    mysqli_query($konek, $querry_insert);
+    return mysqli_affected_rows($konek);
+}
+
 
 
 function delete_pelanggan($id) {
@@ -118,6 +129,19 @@ function update_orders($data) {
                 Qty = '$qty'
                 WHERE KodeLayanan = '$layanan' AND KodeNota = '$nota'";
 
+    mysqli_query($konek, $query);
+    return mysqli_affected_rows($konek);
+}
+
+function update_invoice($data) {
+    global $konek;
+    $tanggal = htmlspecialchars($data["TanggalNota"]);
+    $pelanggan = htmlspecialchars($data["PelangganID"]);
+    $target = $data["target_nota"];
+    $query = "UPDATE invoice SET
+                TanggalNota = '$tanggal',
+                PelangganID = '$pelanggan'
+                WHERE KodeNota = '$target'";
     mysqli_query($konek, $query);
     return mysqli_affected_rows($konek);
 }

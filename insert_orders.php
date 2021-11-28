@@ -38,6 +38,7 @@ if(isset($_POST["submit"])){
             <select name="KodeNota">
             
             <?php
+            echo"<option value ='' >Pilih KodeNota</option>";
             while ($baris =  mysqli_fetch_assoc($data)){
                 $Nota = $baris["KodeNota"]." - ".$baris["NamaPelanggan"];
                 echo"<option value ='$Nota'>$Nota</option>";
@@ -55,6 +56,7 @@ if(isset($_POST["submit"])){
             <select name="KodeLayanan">
             
             <?php
+            echo"<option value ='' >Pilih Layanan</option>";
             while ($baris =  mysqli_fetch_assoc($data)){
                 $layanan = $baris["KodeLayanan"]." - ".$baris["JenisLayanan"];
                 echo"<option value ='$layanan' >$layanan</option>";

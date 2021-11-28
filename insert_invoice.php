@@ -1,37 +1,70 @@
 <?php
 require 'fungsi.php';
+if(isset($_POST["submit"])){
+    if(tambah_invoice($_POST)>0){
+        echo "Data Berhasil DiInputkan";
+    } else {
+        echo "Data Gagal DiInputkan";
+        echo "<br>";
+        echo mysqli_error($konek);
 
+    }
+}
 
 
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Insert Invoice</title>
+    <title>Insert Orders</title>
 </head>  
 
 
 <body>
 <h1>Chris Laundry</h1>
-<h2>Insert Invoice</h2>
+<h2>Tambah Data Invoice</h2>
+
+<form action="" method="post">
+     <table>
+            <tr>
+             <td><li><label for="TanggalNota">Tanggal</label></li></td>
+             <td>:</td>
+             <td>
+                <input type="date" name="TanggalNota" id="TanggalNota">
+            </td>
+         </tr>
+         <tr>
+             <td><li><label for="PelangganID">ID Pelanggan </label></li></td>
+             <td>:</td>
+             <td>
+             <?php 
+            $data = mysqli_query($konek, "SELECT * FROM pelanggan");
+            ?>
+            <select name="PelangganID">
+            
+            <?php
+            echo"<option value ='' >Pilih Pelanggan</option>";
+            while ($baris =  mysqli_fetch_assoc($data)){
+                $Nota = $baris["PelangganID"]." - ".$baris["NamaPelanggan"];
+                echo"<option value ='$Nota'>$Nota</option>";
+            } 
+            ?> 
+             </td>
+         </tr>
+         <tr>
+             <td></td>
+             <td></td>
+             <td>
+             <button type="submit" name="submit">Tambah Data</button>
+            </td>
+         </tr>
+     </table>
+</form>
+
 <p>
-    
-<ul>
-    <li>
-        <button onclick="window.location.href='view_pelanggan.php'">View Pelanggan</button>
-    </li>
-    
-
-        <!-- <a id= 'a1' href='view_pelanggan.php'>View Pelanggan</a> -->
-    <li>
-        <button onclick="window.location.href='view_layanan.php'">View Layanan</button>
-    </li>
-    <li>
-        <button onclick="window.location.href='view_invoice.php'">View invoice</button>
-    </li>
-
-</ul>
+    <a id= 'a1' href='index.php'><button>Kembali ke Menu</button></a>
 </p>
+    
 </body>
 
 </html>

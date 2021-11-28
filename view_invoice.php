@@ -29,9 +29,10 @@ $invoice = query("SELECT * FROM invoice")
         <td><?= $baris["TanggalNota"]; ?></td>
         <td><?= $baris["PelangganID"]; ?></td>
         <td>
-           <a id= 'a1' href='view_pelanggan.php'>Update</a>
-           
-           <a id= 'a1' href='view_layanan.php'>Delete </a>
+           <a href='update_invoice.php?id=<?= $baris["KodeNota"]; ?>'><button>Update</button></a>
+            | 
+           <a href='delete_invoice.php?id=<?= $baris["KodeNota"]; ?>'onclick="return confirm('Apakah anda yakin ingin menghapus data ini?');">
+           <button>Delete</button></a>
         </td>
     </tr> 
     <?php $i++; ?>
