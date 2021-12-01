@@ -15,7 +15,7 @@
 
     $pdf = new FPDF("p","cm","a5");
     $pdf->AddPage();
-    $pdf->Image('background1-min.jpg',0,0,-299);
+    // $pdf->Image('background1-min.jpg',0,0,-299);
 
     $pdf->SetFont("courier","B",24);
     $pdf->SetTextColor(0,0,0);

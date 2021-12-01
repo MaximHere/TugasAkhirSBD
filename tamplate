@@ -1,0 +1,21 @@
+<?php
+require 'fungsi.php';
+
+
+
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Insert Pelanggan</title>
+</head>  
+
+
+<body>
+<h1>Chris Laundry</h1>
+<h2>Tambah Data Pelanggan</h2>
+
+    
+</body>
+
+</html>

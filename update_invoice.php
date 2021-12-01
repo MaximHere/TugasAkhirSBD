@@ -53,7 +53,7 @@ elseif( isset($_GET["back"])){
             </li>
             <li>
                 <label for="TanggalNota">Tanggal : </label>
-                <input type="date" name="TanggalNota" id="TanggalNota"required value="<?= $updt["TanggalNota"]; ?>" required>
+                <input type="date" name="TanggalNota" id="TanggalNota"required value="<?= $updt["TanggalNota"]; ?>">
             </li>
             <li>
                 <table>
