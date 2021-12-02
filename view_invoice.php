@@ -13,6 +13,8 @@ $invoice = query("SELECT * FROM invoice")
 
 <body>
 <h1>Data Invoice</h1>
+<button onclick="window.location.href='insert_invoice.php'">Insert Invoice</button>
+<br><br>
 <table border="1" cellpadding="10" cellspacing="0">
     <tr>
         <th>No</th>

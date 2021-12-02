@@ -13,6 +13,8 @@ $orders = query("SELECT * FROM orders")
 
 <body>
 <h1>Data Order</h1>
+<button onclick="window.location.href='insert_orders.php'">Insert Orders</button>
+<br><br>
 <table border="1" cellpadding="10" cellspacing="0">
     <tr>
         <th>No</th>

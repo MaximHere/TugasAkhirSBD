@@ -23,7 +23,7 @@ require 'fungsi.php';
         <button onclick="window.location.href='insert_layanan.php'">Insert Layanan</button>
     </li>
     <li>
-        <button onclick="window.location.href='insert_invoice.php'">Insert Invoice</button>
+        <button onclick="window.location.href='insert_transaksi.php'">Insert Transaksi</button>
     </li> 
     <li>
         <button onclick="window.location.href='insert_orders.php'">Insert Orders</button>
@@ -31,11 +31,11 @@ require 'fungsi.php';
 
 </ul>
 
-<ul>
+<!-- <ul>
     <li>
         <button onclick="window.location.href='insert_transaksi.php'">Insert Transaksi</button>
     </li>
-</ul>
+</ul> -->
 
 <ul>
     <li>

@@ -13,6 +13,8 @@ $layanan = query("SELECT * FROM layanan")
 
 <body>
 <h1>Data Layanan</h1>
+<button onclick="window.location.href='insert_layanan.php'">Insert Layanan</button>
+<br><br>
 <table border="1" cellpadding="10" cellspacing="0">
     <tr>
         <th>No</th>
