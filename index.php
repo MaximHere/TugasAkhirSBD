@@ -25,9 +25,7 @@ require 'fungsi.php';
     <li>
         <button onclick="window.location.href='insert_transaksi.php'">Insert Transaksi</button>
     </li> 
-    <li>
-        <button onclick="window.location.href='insert_orders.php'">Insert Orders</button>
-    </li>  
+   
 
 </ul>
 
