@@ -37,7 +37,7 @@ elseif( isset($_GET["back"])){
     <title>Create</title>
 </head>
 <body>
-    <h1>Update data order</h1>
+    <h1>Update data Invoice</h1>
     <form action="" method="post">
         <input type="hidden" name="target_nota" value="<?= $id;?>">
         <!-- <table>
