@@ -55,7 +55,7 @@ if(isset($_POST["submit"])){
             <input type="Qty" name="Qty" id="Qty">
         </li>
         <li>
-            <button type="submit" name="submit">Tambah Data</button>
+            <button type="submit" name="submit">Simpan Data</button> | <button type="lanjut" name="lanjut">Tambah Order Lain</button>
         </li>
     </ul>
 </form>

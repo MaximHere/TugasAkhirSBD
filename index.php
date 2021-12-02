@@ -33,6 +33,12 @@ require 'fungsi.php';
 
 <ul>
     <li>
+        <button onclick="window.location.href='insert_transaksi.php'">Insert Transaksi</button>
+    </li>
+</ul>
+
+<ul>
+    <li>
         <button onclick="window.location.href='view_pelanggan.php'">View Pelanggan</button>
     </li>
     
