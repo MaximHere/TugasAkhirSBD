@@ -59,7 +59,7 @@ if(isset($_POST["submit"])){
              <td></td>
              <td></td>
              <td>
-             <button type="submit" name="submit">Tambah Data</button>
+             <button type="submit" name="submit">Lanjut</button>
             </td>
          </tr>
      </table>
